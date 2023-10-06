@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .time-display {
@@ -9,7 +10,7 @@
   background: #F5F5F5;
   width: fit-content;
   align-content: center;
-  margin-top: 10vw;
+  margin-top: 3vw;
   border-radius: 3vw;
   padding: 3vw;
   border-style: solid;

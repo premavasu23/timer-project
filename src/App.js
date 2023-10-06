@@ -78,9 +78,9 @@ function App() {
       </div>
 
       <div>
-      <button className="minor-button" onClick={add1Min}>+ 1 M</button>
-      <button className="minor-button" onClick={add1Sec}>+ 1 S</button>
-      <button className="minor-button" onClick={add10Sec}>+ 10 S</button>
+      <button className="minor-button" onClick={add1Min}>+ 1 min</button>
+      <button className="minor-button" onClick={add1Sec}>+ 1 sec</button>
+      <button className="minor-button" onClick={add10Sec}>+ 10 sec</button>
       </div>
     </div>
   );

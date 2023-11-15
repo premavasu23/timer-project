@@ -8,23 +8,22 @@ function App() {
   const [date, setDate] = useState(defaultDate)
   const [displayTime, setDisplayTime] = useState('00:00');
 
+  const addTime = ((event) => {
+    const buttonId = event.target.id;
 
-  const add10Sec = (() => {
-    date.setSeconds(date.getSeconds() + 10);
-    setDate(date)
-    setDisplayTime(String(date.getMinutes()).padStart(2, "0") + ":" + date.getSeconds())
-  })
+    if(buttonId === 'add1Min') {
+      date.setMinutes(date.getMinutes() + 1);
+    }
+    else if (buttonId === 'add10Sec') {
+      date.setSeconds(date.getSeconds() + 10);
+    }
+    else if (buttonId === 'add1Sec') {
+      date.setSeconds(date.getSeconds() + 1);
+    }
 
-  const add1Sec = (() => {
-    date.setSeconds(date.getSeconds() + 1);
-    setDate(date)
+    setDate(date)  
     setDisplayTime(String(date.getMinutes()).padStart(2, "0") + ":" + String(date.getSeconds()).padStart(2, "0"))
-  })
 
-  const add1Min = (() => {
-    date.setMinutes(date.getMinutes() + 1);
-    setDate(date)
-    setDisplayTime(String(date.getMinutes()).padStart(2, "0") + ":" + String(date.getSeconds()).padStart(2, "0"))
   })
   
   const resetTimer = (() => {
@@ -78,9 +77,9 @@ function App() {
       </div>
 
       <div>
-      <button className="minor-button" onClick={add1Min}>+ 1 min</button>
-      <button className="minor-button" onClick={add1Sec}>+ 1 sec</button>
-      <button className="minor-button" onClick={add10Sec}>+ 10 sec</button>
+      <button className="minor-button" id="add1Min" onClick={addTime}>+ 1 min</button>
+      <button className="minor-button" id="add1Sec" onClick={addTime}>+ 1 sec</button>
+      <button className="minor-button" id="add10Sec" onClick={addTime}>+ 10 sec</button>
       </div>
     </div>
   );
